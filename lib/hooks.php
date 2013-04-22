@@ -33,3 +33,21 @@
 		
 		return $result;
 	}
+	
+	function best_practices_widget_url_hook($hook, $type, $returnvalue, $params) {
+		$result = $returnvalue;
+		
+		if (empty($result) && !empty($params) && is_array($params)) {
+			$widget = elgg_extract("entity", $params);
+			
+			if ($widget->handler == "best_practices") {
+				switch ($widget->context) {
+					case "groups":
+						$result = "best_practice/group/" . $widget->getOwnerGUID() . "/all";
+						break;
+				}
+			}
+		}
+		
+		return $result;
+	}

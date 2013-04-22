@@ -20,12 +20,16 @@
 		// extend views
 		elgg_extend_view("groups/tool_latest", "best_practices/group_module");
 		
+		// register widgets
+		elgg_register_widget_type("best_practices", elgg_echo("best_practices:widget:title"), elgg_echo("best_practices:widget:description"), "groups");
+		
 		// register events
 		elgg_register_event_handler("pagesetup", "system", "best_practices_pagesetup");
 		
 		// register plugin hooks
 		elgg_register_plugin_hook_handler("public_pages", "walled_garden", "best_practices_public_pages_hook");
 		elgg_register_plugin_hook_handler("register", "menu:owner_block", "best_practices_register_menu_owner_block_hook");
+		elgg_register_plugin_hook_handler("widget_url", "widget_manager", "best_practices_widget_url_hook");
 		
 		// register actions
 		elgg_register_action("best_practices/edit", dirname(__FILE__) . "/actions/edit.php");

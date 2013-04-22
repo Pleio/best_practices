@@ -41,7 +41,9 @@
 		'best_practices:listing:likes' => "Likes",
 		'best_practices:listing:date_format' => "Y-m-d",
 		
-		'' => "",
+		// widget
+		'best_practices:widget:title' => "Best practices",
+		'best_practices:widget:description' => "List the latest best practices within the group",
 		
 		// plugin settings
 		'best_practices:settings:target_audience' => "Define the target audience options",
