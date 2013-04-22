@@ -25,7 +25,7 @@
 				$result[] = ElggMenuItem::factory(array(
 					"name" => "best_practices",
 					"text" => elgg_echo("best_practices:menu:owner_block:group"),
-					"href" => "best_practice/group/" . $entity->getGUID(),
+					"href" => "best_practice/group/" . $entity->getGUID() . "/all",
 					"is_trusted" => true
 				));
 			}
