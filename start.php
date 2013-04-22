@@ -22,6 +22,7 @@
 		
 		// register plugin hooks
 		elgg_register_plugin_hook_handler("public_pages", "walled_garden", "best_practices_public_pages_hook");
+		elgg_register_plugin_hook_handler("register", "menu:owner_block", "best_practices_register_menu_owner_block_hook");
 		
 		// register actions
 		elgg_register_action("best_practices/edit", dirname(__FILE__) . "/actions/edit.php");

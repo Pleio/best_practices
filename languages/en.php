@@ -6,13 +6,15 @@
 		'best_practice:add' => "Add Best practice",
 		
 		// menu
-		'best_practices:menu:site' => "Best Practices",
+		'best_practices:menu:site' => "Best practices",
+		'best_practices:menu:owner_block:user' => "Best practices",
+		'best_practices:menu:owner_block:group' => "Group best practices",
 		
 		// pages
 		'best_practices:all:title' => "Best practices",
 		
-		'best_practices:add:title' => "New Best practice",
-		'best_practices:edit:title' => "Edit Best practice: %s",
+		'best_practices:add:title' => "New best practice",
+		'best_practices:edit:title' => "Edit best practice: %s",
 		
 		'best_practices:edit:icon' => "Upload an icon",
 		'best_practices:edit:icon:description' => "You can uplpoad a new icon for this Best practice of leave it blank to keep the current icon",
@@ -28,12 +30,12 @@
 		'best_practices:edit:attachements:file:title' => "Filename",
 		'best_practices:edit:attachements:file' => "Upload a new file",
 		
-		'best_practices:friends:title' => "%s friends' Best practices",
+		'best_practices:friends:title' => "%s friends' best practices",
 		
-		'best_practices:group:title' => "%s' Best practices",
+		'best_practices:group:title' => "%s' best practices",
 		
-		'best_practices:owner:title:mine' => "My Best practices",
-		'best_practices:owner:title' => "%s' Best practices",
+		'best_practices:owner:title:mine' => "My best practices",
+		'best_practices:owner:title' => "%s' best practices",
 		
 		'best_practices:listing:created' => "Created",
 		'best_practices:listing:likes' => "Likes",
@@ -62,8 +64,8 @@
 		
 		// edit
 		'best_practices:action:edit:error:input' => "Please provide a title and description in order to continue",
-		'best_practices:action:edit:error:save' => "An unknown error occured while saving the Best practice",
-		'best_practices:action:edit:success' => "The Best practice was saved successfully",
+		'best_practices:action:edit:error:save' => "An unknown error occured while saving the best practice",
+		'best_practices:action:edit:success' => "The best practice was saved successfully",
 		
 	);
 	
