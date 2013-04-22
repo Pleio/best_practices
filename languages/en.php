@@ -40,7 +40,7 @@
 		'best_practices:listing:created' => "Created",
 		'best_practices:listing:likes' => "Likes",
 		'best_practices:listing:date_format' => "Y-m-d",
-		'' => "",
+		
 		'' => "",
 		
 		// plugin settings

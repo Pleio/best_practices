@@ -17,6 +17,9 @@
 		// add subtype
 		add_subtype("object", BestPractice::SUBTYPE, "BestPractice");
 		
+		// extend views
+		elgg_extend_view("groups/tool_latest", "best_practices/group_module");
+		
 		// register events
 		elgg_register_event_handler("pagesetup", "system", "best_practices_pagesetup");
 		
