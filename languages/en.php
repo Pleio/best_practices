@@ -35,6 +35,12 @@
 		'best_practices:owner:title:mine' => "My Best practices",
 		'best_practices:owner:title' => "%s' Best practices",
 		
+		'best_practices:listing:created' => "Created",
+		'best_practices:listing:likes' => "Likes",
+		'best_practices:listing:date_format' => "Y-m-d",
+		'' => "",
+		'' => "",
+		
 		// plugin settings
 		'best_practices:settings:target_audience' => "Define the target audience options",
 		'best_practices:settings:target_audience:description' => "You can supply a comma seperated list of options for the target audience to be chosen when creating/editing a Best practice",

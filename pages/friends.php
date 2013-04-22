@@ -31,9 +31,12 @@
 			"type" => "object",
 			"subtype" => BestPractice::SUBTYPE,
 			"owner_guids" => $friend_guids,
-			"full_view" => false
+			"limit" => false,
+			"full_view" => false,
+			"list_type" => "table",
+			"header" => elgg_view("best_practices/list_header")
 		);
-		if (!($content = elgg_list_entities($options))) {
+		if (!($content = elgg_list_entities($options, "elgg_get_entities", "best_practices_view_entity_list"))) {
 			$content = elgg_echo("notfound");
 		}
 	} else {
@@ -41,7 +44,7 @@
 	}
 	
 	// build page
-	$page_data = elgg_view_layout("content", array(
+	$page_data = elgg_view_layout("best_practices", array(
 		"title" => $title_text,
 		"content" => $content,
 		"filter_context" => $filter_context

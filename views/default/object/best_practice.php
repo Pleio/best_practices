@@ -1,6 +1,7 @@
 <?php
 
 	$entity = elgg_extract("entity", $vars);
+	$list_type = elgg_extract("list_type", $vars);
 	$owner = $entity->getOwnerEntity();
 	
 	$entity_menu = "";
@@ -77,23 +78,55 @@
 		));
 		
 	} else {
-		// list view
-		$icon = elgg_view_entity_icon($entity, "small");
-		
-		// make subtitle
-		$subtitle = $author . " " . $date . " " . $comments . " " . $categories;
-		
-		// build summary
-		$params = array(
-			"entity" => $entity,
-			"metadata" => $entity_menu,
-			"subtitle" => $subtitle,
-			"content" => elgg_get_excerpt($entity->description)
-		);
-		
-		$params = $params + $vars;
-		$body = elgg_view("object/elements/summary", $params);
-		
-		echo elgg_view_image_block($icon, $body);
+		// how to show the listing
+		if (!empty($list_type) && ($list_type == "table")) {
+			// table view
+			echo "<td>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
+			echo "<td>" . $author_link . "</td>";
+			$title_link = elgg_view("output/url", array("text" => $entity->title, "href" => $entity->getURL(), "is_trusted" => true));
+			echo "<td>" . $title_link . "</td>";
+			echo "<td>" . $entity->organisation . "</td>";
+			// groepen
+			$group_list = "&nbsp;";
+			if($groups = $entity->getRelatedGroups()) {
+				$group_list = array();
+				foreach ($groups as $group) {
+					$group_list[] = elgg_view("output/url", array("text" => $group->name, "href" => $group->getURL(), "is_trusted" => true));
+				}
+				
+				$group_list = implode(", ", $group_list);
+			}
+			echo "<td>" . $group_list . "</td>";
+			
+			$comments = elgg_view("output/url", array("text" => $comment_count, "href" => $entity->getURL() . "#comments", "is_trusted" => true));
+			echo "<td>" . $comments . "</td>";
+			
+			// likes, if available
+			if (elgg_is_active_plugin("likes")) {
+				$likes_count = likes_count($entity);
+				$likes_link = elgg_view("likes/button", array("entity" => $entity));
+				
+				echo "<td>" . $likes_count . "&nbsp;" . $likes_link . "</td>";
+			}
+		} else {
+			// list view
+			$icon = elgg_view_entity_icon($entity, "small");
+			
+			// make subtitle
+			$subtitle = $author . " " . $date . " " . $comments . " " . $categories;
+			
+			// build summary
+			$params = array(
+				"entity" => $entity,
+				"metadata" => $entity_menu,
+				"subtitle" => $subtitle,
+				"content" => elgg_get_excerpt($entity->description)
+			);
+			
+			$params = $params + $vars;
+			$body = elgg_view("object/elements/summary", $params);
+			
+			echo elgg_view_image_block($icon, $body);
+		}
 	}
 	
