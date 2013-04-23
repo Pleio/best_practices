@@ -81,32 +81,32 @@
 		// how to show the listing
 		if (!empty($list_type) && ($list_type == "table")) {
 			// table view
-			echo "<td>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
-			echo "<td>" . $author_link . "</td>";
+			echo "<td rel='created' class='best-practices-nowrap'>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
+			echo "<td rel='author'>" . $author_link . "</td>";
 			$title_link = elgg_view("output/url", array("text" => $entity->title, "href" => $entity->getURL(), "is_trusted" => true));
-			echo "<td>" . $title_link . "</td>";
-			echo "<td>" . $entity->organisation . "</td>";
+			echo "<td rel='title'>" . $title_link . "</td>";
+			echo "<td rel='organisation'>" . $entity->organisation . "</td>";
 			// groepen
 			$group_list = "&nbsp;";
 			if($groups = $entity->getRelatedGroups()) {
 				$group_list = array();
 				foreach ($groups as $group) {
-					$group_list[] = elgg_view("output/url", array("text" => $group->name, "href" => $group->getURL(), "is_trusted" => true));
+					$group_list[] = elgg_view("output/url", array("text" => $group->name, "href" => "best_practice/group/" . $group->getGUID() . "/all", "is_trusted" => true));
 				}
 				
 				$group_list = implode(", ", $group_list);
 			}
-			echo "<td>" . $group_list . "</td>";
+			echo "<td rel='groups'>" . $group_list . "</td>";
 			
-			$comments = elgg_view("output/url", array("text" => $comment_count, "href" => $entity->getURL() . "#comments", "is_trusted" => true));
-			echo "<td>" . $comments . "</td>";
+			$comments = elgg_view("output/url", array("text" => $comment_count . "&nbsp;" . elgg_view_icon("speech-bubble"), "href" => $entity->getURL() . "#comments", "is_trusted" => true));
+			echo "<td class='best-practices-nowrap'>" . $comments . "</td>";
 			
 			// likes, if available
 			if (elgg_is_active_plugin("likes")) {
 				$likes_count = likes_count($entity);
 				$likes_link = elgg_view("likes/button", array("entity" => $entity));
 				
-				echo "<td>" . $likes_count . "&nbsp;" . $likes_link . "</td>";
+				echo "<td class='best-practices-nowrap'>" . $likes_count . "&nbsp;" . $likes_link . "</td>";
 			}
 		} else {
 			// list view

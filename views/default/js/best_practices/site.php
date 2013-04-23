@@ -70,7 +70,40 @@ elgg.best_practices.init = function() {
 			$(elem).prepend("<span class='elgg-icon elgg-icon-delete float-alt'></span>").append($hidden);
 		});
 	}
+
+	$(".elgg-icon-best-practices-filter").click(function(){
+		$(this).parent().find(".best-practices-filter-input").toggle();
+	});
+
+	$(".best-practices-filter-input").keyup(function() {
+		elgg.best_practices.filter(this);
+	});
 		
+}
+
+elgg.best_practices.filter = function(elem) {
+	name = $(elem).attr("name");
+	val = $(elem).val();
+	
+	if(val == ""){
+		$(".best-practices-table td[rel='" + name + "']").removeClass("hidden");
+	} else {
+		$(".best-practices-table td[rel='" + name + "']").each(function(){
+			if($(this).text().toUpperCase().indexOf(val.toUpperCase()) >= 0) {
+				$(this).removeClass("hidden");
+			} else {
+				$(this).addClass("hidden");
+			}
+		});
+	}
+
+	$(".best-practices-table tr").each(function(){
+		if($(this).find("td.hidden").length > 0){
+			$(this).addClass("hidden");
+		} else {
+			$(this).removeClass("hidden");
+		}
+	});
 }
 
 //register init hook
