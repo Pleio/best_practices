@@ -24,9 +24,8 @@
 		'best_practices:edit:groups' => "Related groups",
 		'best_practices:edit:contact' => "Contact information",
 		'best_practices:edit:contact:name' => "Contact person",
-		'best_practices:edit:attachments' => "Attachments",
-		'best_practices:edit:attachements:url' => "Links",
-		'best_practices:edit:attachements:files' => "Files",
+		'best_practices:edit:attachements:url' => "Attachments - Links",
+		'best_practices:edit:attachements:files' => "Attachments - Files",
 		'best_practices:edit:attachements:file:title' => "Filename",
 		'best_practices:edit:attachements:file' => "Upload a new file",
 		

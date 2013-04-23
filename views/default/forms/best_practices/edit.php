@@ -12,7 +12,7 @@
 		$tags = elgg_get_sticky_value("best_practice", "tags", $entity->tags);
 		$target_audience = elgg_get_sticky_value("best_practice", "target_audience", $entity->target_audience);
 		
-		$organisation = elgg_get_sticky_value("best_practice", "organisation". $entity->organisation);
+		$organisation = elgg_get_sticky_value("best_practice", "organisation", $entity->organisation);
 		
 		$groups = elgg_get_sticky_value("best_practice", "groups", $entity->getRelatedGroups(true));
 		
@@ -139,8 +139,8 @@
 	
 	// attachements
 	// links / urls
-	$attachments = "<div id='best-practice-form-edit-attachtments-links'>";
-	$attachments .= "<label>" . elgg_echo("best_practices:edit:attachements:url");
+	$attachments_links = "<div id='best-practice-form-edit-attachtments-links'>";
+	$attachments_links .= "<label><span class='hidden'>" . elgg_echo("best_practices:edit:attachements:url") . "</span>";
 	
 	if (!empty($links)) {
 		if (!is_array($links)) {
@@ -148,50 +148,51 @@
 		}
 		
 		foreach ($links as $link) {
-			$attachments .= elgg_view("input/url", array("name" => "links[]", "value" => $link, "class" => "mbs"));
+			$attachments_links .= elgg_view("input/url", array("name" => "links[]", "value" => $link, "class" => "mbs"));
 		}
 	}
 	
-	$attachments .= elgg_view("input/url", array("name" => "links[]", "class" => "mbs"));
-	$attachments .= "</label>";
-	$attachments .= "</div>";
+	$attachments_links .= elgg_view("input/url", array("name" => "links[]", "class" => "mbs"));
+	$attachments_links .= "</label>";
+	$attachments_links .= "</div>";
+	
+	echo elgg_view_module("info", elgg_echo("best_practices:edit:attachements:url"), $attachments_links);
 	
 	// files
-	$attachments .= "<div id='best-practice-form-edit-attachtments-files'>";
-	$attachments .= "<label>" . elgg_echo("best_practices:edit:attachements:files") . "</label>";
+	$attachments_files = "<div id='best-practice-form-edit-attachtments-files'>";
 	
 	if (!empty($files)) {
-		$attachments .= "<div>";
+		$attachments_files .= "<div>";
 		
 		foreach($files as $info) {
 			$info = json_decode($info);
 			
-			$attachments .= "<div class='elgg-discover'>";
-			$attachments .= elgg_view("output/url", array("text" => elgg_view_icon("download", "mrs") . $info[0], "href" => "best_practice/attachment/" . $entity->getGUID() . "/" . $info[1]));
-			$attachments .= elgg_view("output/confirmlink", array(
+			$attachments_files .= "<div class='elgg-discover'>";
+			$attachments_files .= elgg_view("output/url", array("text" => elgg_view_icon("download", "mrs") . $info[0], "href" => "best_practice/attachment/" . $entity->getGUID() . "/" . $info[1]));
+			$attachments_files .= elgg_view("output/confirmlink", array(
 				"text" => elgg_view_icon("delete"),
 				"href" => "action/best_practices/delete_attachment?guid=" . $entity->getGUID() . "&filename=" . urlencode($info[1]),
 				"class" => "mls elgg-discoverable"
 			));
-			$attachments .= "</div>";
+			$attachments_files .= "</div>";
 		}
 		
-		$attachments .= "</div>";
+		$attachments_files .= "</div>";
 	}
 	
-	$attachments .= "<div>";
-	$attachments .= "<label>" . elgg_echo("best_practices:edit:attachements:file:title");
-	$attachments .= elgg_view("input/text", array("name" => "file_titles[]", "class" => "mbs"));
-	$attachments .= "</label>";
+	$attachments_files .= "<div>";
+	$attachments_files .= "<label>" . elgg_echo("best_practices:edit:attachements:file:title");
+	$attachments_files .= elgg_view("input/text", array("name" => "file_titles[]", "class" => "mbs"));
+	$attachments_files .= "</label>";
 	
-	$attachments .= "<label>" . elgg_echo("best_practices:edit:attachements:file");
-	$attachments .= elgg_view("input/file", array("name" => "files[]", "class" => "mbs"));
-	$attachments .= "</label>";
+	$attachments_files .= "<label>" . elgg_echo("best_practices:edit:attachements:file");
+	$attachments_files .= elgg_view("input/file", array("name" => "files[]", "class" => "mbs"));
+	$attachments_files .= "</label>";
 	
-	$attachments .= "</div>";
-	$attachments .= "</div>";
+	$attachments_files .= "</div>";
+	$attachments_files .= "</div>";
 	
-	echo elgg_view_module("info", elgg_echo("best_practices:edit:attachments"), $attachments);
+	echo elgg_view_module("info", elgg_echo("best_practices:edit:attachements:files"), $attachments_files);
 	
 	// access
 	echo "<div>";
