@@ -17,7 +17,7 @@
 		'best_practices:edit:title' => "Edit best practice: %s",
 		
 		'best_practices:edit:icon' => "Upload an icon",
-		'best_practices:edit:icon:description' => "You can uplpoad a new icon for this Best practice of leave it blank to keep the current icon",
+		'best_practices:edit:icon:description' => "You can upload a new icon for this Best practice of leave it blank to keep the current icon",
 		'best_practices:edit:icon:remove' => "Remove the current icon",
 		'best_practices:edit:target_audience' => "Target audience",
 		'best_practices:edit:organisation' => "Organisation",
