@@ -5,6 +5,8 @@
 	
 	if (!empty($guid) && !empty($filename)) {
 		if (($entity = get_entity($guid)) && elgg_instanceof($entity, "object", BestPractice::SUBTYPE)) {
+			$file_info = $entity->getAttachedFileInformation($filename);
+			
 			$fh = new ElggFile();
 			$fh->owner_guid = $entity->getGUID();
 			
@@ -12,7 +14,9 @@
 			
 			if ($fh->exists()) {
 				if ($contents = $fh->grabFile()) {
-					if($mime = $fh->detectMimeType()) {
+					if (!empty($file_info) && !empty($file_info[2])) {
+						header("Content-type: " . $file_info[2]);
+					} elseif ($mime = $fh->detectMimeType()) {
 						header("Content-type: " . $mime);
 					}
 					header("Content-Disposition: attachment; filename=\"$filename\"");

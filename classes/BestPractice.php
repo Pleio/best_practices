@@ -51,7 +51,7 @@
 			return $result;
 		}
 		
-		public function addFileAttachment($nice_name, $filename) {
+		public function addFileAttachment($nice_name, $filename, $mime_type = "") {
 			$files = $this->files;
 			
 			if(empty($files)) {
@@ -60,7 +60,7 @@
 				$files = array($files);
 			}
 			
-			$files[] = json_encode(array($nice_name, $filename));
+			$files[] = json_encode(array($nice_name, $filename, $mime_type));
 			
 			return $this->files = $files;
 		}
@@ -107,6 +107,20 @@
 				}
 			}
 			
+			return $result;
+		}
+		
+		public function getAttachedFileInformation($filename) {
+			$result = false;
+				
+			if ($files = $this->getAttachedFiles()) {
+				foreach ($files as $info) {
+					if ($info = json_decode($info, true)) {
+						$result = $info;
+					}
+				}
+			}
+				
 			return $result;
 		}
 		

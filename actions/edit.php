@@ -119,7 +119,7 @@
 								$nice_name = $file_titles[$index];
 							}
 							
-							$entity->addFileAttachment($nice_name, $filename);
+							$entity->addFileAttachment($nice_name, $filename, $_FILES["files"]["type"][$index]);
 						}
 					}
 				}
