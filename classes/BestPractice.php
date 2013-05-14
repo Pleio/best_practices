@@ -30,6 +30,19 @@
 			return "best_practice/view/" . $this->getGUID() . "/" . elgg_get_friendly_title($this->title);
 		}
 		
+		public function delete($resursive = true) {
+			// remove file attachments
+			if ($files = $this->getAttachedFiles()) {
+				foreach ($files as $info) {
+					$info = json_decode($info, true);
+					
+					$this->deleteFileAttachment($info[1]);
+				}
+			}
+			
+			return parent::delete($resursive);
+		}
+		
 		public function removeIcon() {
 			$result = false;
 			
