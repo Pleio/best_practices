@@ -25,6 +25,7 @@
 		"limit" => false,
 		"full_view" => false,
 		"list_type" => "table",
+		"list_class" => "best-practices-table",
 		"header" => elgg_view("best_practices/list_header")
 	);
 	if (!($content = elgg_list_entities($options, "elgg_get_entities_from_relationship", "best_practices_view_entity_list"))) {
