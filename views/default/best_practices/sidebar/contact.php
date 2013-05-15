@@ -9,6 +9,10 @@
 			$content = elgg_view_icon("user", "mrs") . $entity->contact_name . "<br />";
 		}
 		
+		if ($entity->contact_name) {
+			$content .= elgg_view_icon("users", "mrs") . $entity->organisation . "<br />";
+		}
+		
 		if ($entity->contact_email) {
 			$content .= elgg_view_icon("mail-alt", "mrs") . elgg_view("output/email", array("value" => $entity->contact_email)) . "<br />";
 		}

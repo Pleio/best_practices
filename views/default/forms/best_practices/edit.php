@@ -12,11 +12,10 @@
 		$tags = elgg_get_sticky_value("best_practice", "tags", $entity->tags);
 		$target_audience = elgg_get_sticky_value("best_practice", "target_audience", $entity->target_audience);
 		
-		$organisation = elgg_get_sticky_value("best_practice", "organisation", $entity->organisation);
-		
 		$groups = elgg_get_sticky_value("best_practice", "groups", $entity->getRelatedGroups(true));
 		
 		$contact_name = elgg_get_sticky_value("best_practice", "contact_name", $entity->contact_name);
+		$organisation = elgg_get_sticky_value("best_practice", "organisation", $entity->organisation);
 		$contact_email = elgg_get_sticky_value("best_practice", "contact_email", $entity->contact_email);
 		$contact_phone = elgg_get_sticky_value("best_practice", "contact_phone", $entity->contact_phone);
 		
@@ -38,11 +37,10 @@
 		$tags = elgg_get_sticky_value("best_practice", "tags");
 		$target_audience = elgg_get_sticky_value("best_practice", "target_audience");
 		
-		$organisation = elgg_get_sticky_value("best_practice", "organisation");
-		
 		$groups = elgg_get_sticky_value("best_practice", "groups");
 		
 		$contact_name = elgg_get_sticky_value("best_practice", "contact_name");
+		$organisation = elgg_get_sticky_value("best_practice", "organisation");
 		$contact_email = elgg_get_sticky_value("best_practice", "contact_email");
 		$contact_phone = elgg_get_sticky_value("best_practice", "contact_phone");
 		
@@ -89,11 +87,6 @@
 	// support for site categories
 	echo elgg_view("input/categories", $vars);
 	
-	echo "<div>";
-	echo "<label for='best-practice-form-edit-organisation'>" . elgg_echo("best_practices:edit:organisation") . "</label>";
-	echo elgg_view("input/text", array("name" => "organisation", "value" => $organisation, "id" => "best-practice-form-edit-organisation"));
-	echo "</div>";
-	
 	if (elgg_is_active_plugin("groups")) {
 		elgg_load_js("jquery.ui.autocomplete.html");
 		
@@ -123,6 +116,11 @@
 	$contact = "<div>";
 	$contact .= "<label for='best-practice-form-edit-contact-name'>" . elgg_echo("best_practices:edit:contact:name") . "</label>";
 	$contact .= elgg_view("input/text", array("name" => "contact_name", "value" => $contact_name, "id" => "best-practice-form-edit-contact-name"));
+	$contact .= "</div>";
+	
+	$contact .= "<div>";
+	$contact .= "<label for='best-practice-form-edit-organisation'>" . elgg_echo("best_practices:edit:organisation") . "</label>";
+	$contact .= elgg_view("input/text", array("name" => "organisation", "value" => $organisation, "id" => "best-practice-form-edit-organisation"));
 	$contact .= "</div>";
 	
 	$contact .= "<div>";

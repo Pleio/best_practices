@@ -49,14 +49,6 @@
 			$target_audience .= "</div>";
 		}
 		
-		// list organisation
-		$organisation = "";
-		if ($entity->organisation) {
-			$organisation = "<div>";
-			$organisation .= elgg_echo("best_practices:edit:organisation") . ": " . elgg_view("output/text", array("value" => $entity->organisation));
-			$organisation .= "</div>";
-		}
-		
 		// build summary
 		$params = array(
 			"entity" => $entity,
