@@ -24,8 +24,8 @@
 		'best_practices:edit:groups' => "Related groups",
 		'best_practices:edit:contact' => "Contact information",
 		'best_practices:edit:contact:name' => "Contact person",
-		'best_practices:edit:attachements:url' => "Attachments - Links",
-		'best_practices:edit:attachements:files' => "Attachments - Files",
+		'best_practices:edit:attachements:url' => "Links",
+		'best_practices:edit:attachements:files' => "Files",
 		'best_practices:edit:attachements:file:title' => "Filename",
 		'best_practices:edit:attachements:file' => "Upload a new file",
 		
@@ -54,7 +54,7 @@
 		
 		// sidebar
 		'best_practices:sidebar:contact:title' => "Contact information",
-		'best_practices:sidebar:files:title' => "Attachments",
+		'best_practices:sidebar:files:title' => "Files",
 		'best_practices:sidebar:groups:title' => "Related groups",
 		'best_practices:sidebar:links:title' => "Links",
 		
