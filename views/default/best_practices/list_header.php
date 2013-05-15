@@ -1,23 +1,31 @@
 <?php
 
-	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:listing:created");
-	echo "<div>" . elgg_view("input/text", array("name" => "created", "class" => "best-practices-filter-input")) . "</div>";
+	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("title");
+	echo "<div>" . elgg_view("input/text", array("name" => "title", "class" => "best-practices-filter-input")) . "</div>";
+	echo "</th>";
+
+	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:edit:groups");
+	echo "<div>" . elgg_view("input/text", array("name" => "groups", "class" => "best-practices-filter-input")) . "</div>";
+	echo "</th>";
+	
+	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:edit:target_audience");
+	echo "<div>" . elgg_view("input/text", array("name" => "target_audience", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
 	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("admin:plugins:label:author");
 	echo "<div>" . elgg_view("input/text", array("name" => "author", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
-	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("title");
-	echo "<div>" . elgg_view("input/text", array("name" => "title", "class" => "best-practices-filter-input")) . "</div>";
-	echo "</th>";
-	
 	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:edit:organisation");
 	echo "<div>" . elgg_view("input/text", array("name" => "organisation", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
-	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:edit:groups");
-	echo "<div>" . elgg_view("input/text", array("name" => "groups", "class" => "best-practices-filter-input")) . "</div>";
+	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("tags");
+	echo "<div>" . elgg_view("input/text", array("name" => "tags", "class" => "best-practices-filter-input")) . "</div>";
+	echo "</th>";
+	
+	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:listing:created");
+	echo "<div>" . elgg_view("input/text", array("name" => "created", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
 	echo "<th>&nbsp;</th>";

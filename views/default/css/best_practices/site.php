@@ -21,6 +21,13 @@
 	word-wrap: normal;
 }
 
+.best-practices-table ul.elgg-tags .elgg-icon {
+	display: none;
+}
+.best-practices-table ul.elgg-tags .elgg-tag a {
+	font-size: 12.8px;
+}
+
 .best-practices-filter-input {
 	display: none;
 	padding: 0px;

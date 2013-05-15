@@ -78,11 +78,9 @@
 		// how to show the listing
 		if (!empty($list_type) && ($list_type == "table")) {
 			// table view
-			echo "<td rel='created' class='best-practices-nowrap'>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
-			echo "<td rel='author'>" . $author_link . "</td>";
 			$title_link = elgg_view("output/url", array("text" => $entity->title, "href" => $entity->getURL(), "is_trusted" => true));
 			echo "<td rel='title'>" . $title_link . "</td>";
-			echo "<td rel='organisation'>" . $entity->organisation . "</td>";
+			
 			// groepen
 			$group_list = "&nbsp;";
 			if($groups = $entity->getRelatedGroups()) {
@@ -94,6 +92,22 @@
 				$group_list = implode(", ", $group_list);
 			}
 			echo "<td rel='groups'>" . $group_list . "</td>";
+			
+			$target_audience = "&nbsp;";
+			if ($entity->target_audience) {
+				$target = $entity->target_audience;
+				if (!is_array($target)) {
+					$target = array($target);
+				}
+				
+				$target_audience = implode(", ", $target);
+			}
+			echo "<td rel='target_audience'>" . $target_audience . "</td>";
+			
+			echo "<td rel='author'>" . $author_link . "</td>";
+			echo "<td rel='organisation'>" . $entity->organisation . "</td>";
+			echo "<td rel='tags'>" . elgg_view("output/tags", array("value" => $entity->tags)) . "</td>";
+			echo "<td rel='created' class='best-practices-nowrap'>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
 			
 			$comments = elgg_view("output/url", array("text" => $comment_count . "&nbsp;" . elgg_view_icon("speech-bubble"), "href" => $entity->getURL() . "#comments", "is_trusted" => true));
 			echo "<td class='best-practices-nowrap'>" . $comments . "</td>";
