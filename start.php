@@ -17,6 +17,9 @@
 		// add subtype
 		add_subtype("object", BestPractice::SUBTYPE, "BestPractice");
 		
+		// register best practice for search
+		elgg_register_entity_type("object", BestPractice::SUBTYPE);
+		
 		// extend views
 		elgg_extend_view("groups/tool_latest", "best_practices/group_module");
 		

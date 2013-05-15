@@ -42,5 +42,6 @@ $language = array (
   'best_practices:action:edit:error:input' => 'Je moet een titel en omschrijving opgeven om verder te kunnen gaan',
   'best_practices:action:edit:error:save' => 'Er is een onbekende fout opgetreden tijdens het opslaan van het goede voorbeeld',
   'best_practices:action:edit:success' => 'Het goede voorbeeld is opgeslagen',
+  'river:create:object:default' => '%s schreef het goede voorbeeld %s'',
 );
 add_translation("nl", $language);

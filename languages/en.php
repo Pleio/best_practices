@@ -58,6 +58,9 @@
 		'best_practices:sidebar:groups:title' => "Related groups",
 		'best_practices:sidebar:links:title' => "Links",
 		
+		// river
+		'river:create:object:default' => "%s created a best practice %s",
+		
 		// actions
 		// delete attachment
 		'best_practices:action:delete_attachment:error' => "An unknown error occured while deleting the attachment %s, please try again",

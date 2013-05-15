@@ -148,6 +148,11 @@
 			if ($entity->save()) {
 				elgg_clear_sticky_form("best_practice");
 				
+				// add river event
+				if (!$edit) {
+					add_to_river("river/object/best_practice/create", "create", $entity->getOwnerGUID(), $entity->getGUID());
+				}
+				
 				system_message(elgg_echo("best_practices:action:edit:success"));
 				
 				$forward_url = $entity->getURL();
