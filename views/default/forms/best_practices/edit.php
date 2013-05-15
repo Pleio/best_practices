@@ -53,7 +53,7 @@
 	elgg_clear_sticky_form("best_practice");
 	
 	echo "<div>";
-	echo "<label for='best-practice-form-edit-title'>" . elgg_echo("title") . "</label>";
+	echo "<label for='best-practice-form-edit-title'>" . elgg_echo("title") . "*</label>";
 	echo elgg_view("input/text", array("name" => "title", "value" => $title, "id" => "best-practice-form-edit-title"));
 	echo "</div>";
 	
@@ -68,7 +68,7 @@
 	echo "</div>";
 	
 	echo "<div>";
-	echo "<label for='best-practice-form-edit-description'>" . elgg_echo("description") . "</label>";
+	echo "<label for='best-practice-form-edit-description'>" . elgg_echo("description") . "*</label>";
 	echo elgg_view("input/longtext", array("name" => "description", "value" => $description, "id" => "best-practice-form-edit-description"));
 	echo "</div>";
 	
@@ -91,7 +91,7 @@
 		elgg_load_js("jquery.ui.autocomplete.html");
 		
 		echo "<div>";
-		echo "<label for='best-practice-form-edit-groups'>" . elgg_echo("best_practices:edit:groups") . "</label>";
+		echo "<label for='best-practice-form-edit-groups'>" . elgg_echo("best_practices:edit:groups") . "*</label>";
 		echo elgg_view("input/text", array("id" => "best-practice-form-edit-groups"));
 		echo "<div id='best-practice-form-edit-groups-result' class='ptm'>";
 		
@@ -114,7 +114,7 @@
 	
 	// contact information
 	$contact = "<div>";
-	$contact .= "<label for='best-practice-form-edit-contact-name'>" . elgg_echo("best_practices:edit:contact:name") . "</label>";
+	$contact .= "<label for='best-practice-form-edit-contact-name'>" . elgg_echo("best_practices:edit:contact:name") . "*</label>";
 	$contact .= elgg_view("input/text", array("name" => "contact_name", "value" => $contact_name, "id" => "best-practice-form-edit-contact-name"));
 	$contact .= "</div>";
 	
@@ -124,12 +124,12 @@
 	$contact .= "</div>";
 	
 	$contact .= "<div>";
-	$contact .= "<label for='best-practice-form-edit-contact-email'>" . elgg_echo("email") . "</label>";
+	$contact .= "<label for='best-practice-form-edit-contact-email'>" . elgg_echo("best_practices:edit:contact:email") . "*</label>";
 	$contact .= elgg_view("input/email", array("name" => "contact_email", "value" => $contact_email, "id" => "best-practice-form-edit-contact-email"));
 	$contact .= "</div>";
 	
 	$contact .= "<div>";
-	$contact .= "<label for='best-practice-form-edit-contact-phone'>" . elgg_echo("profile:phone") . "</label>";
+	$contact .= "<label for='best-practice-form-edit-contact-phone'>" . elgg_echo("profile:phone") . "*</label>";
 	$contact .= elgg_view("input/text", array("name" => "contact_phone", "value" => $contact_phone, "id" => "best-practice-form-edit-contact-phone"));
 	$contact .= "</div>";
 	
@@ -202,3 +202,8 @@
 	echo "<div class='elgg-foot'>";
 	echo elgg_view("input/submit", array("value" => $submit_text));
 	echo "</div>";
+	
+	echo "<div class='elgg-quiet'>";
+	echo elgg_echo("best_practices:edit:required");
+	echo "</div>";
+	

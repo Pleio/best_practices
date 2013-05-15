@@ -25,7 +25,30 @@
 	$forward_url = REFERER;
 	$edit = false;
 	
-	if (!empty($title) && !empty($description)) {
+	// validate required input
+	$valid_input = true;
+	$required_input = array(
+		"title",
+		"description",
+		"contact_name",
+		"contact_email",
+		"contact_phone",
+		"groups"
+	);
+	foreach ($required_input as $field) {
+		if (($field == "groups") && !elgg_is_active_plugin("groups")) {
+			// skip group requirement if groups isn't enabled
+			continue;
+		}
+		
+		if (!get_input($field)) {
+			$valid_input = false;
+			
+			register_error(elgg_echo("best_practices:action:edit:error:required:" . $field));
+		}
+	}
+	
+	if ($valid_input) {
 		$entity = false;
 		
 		if (!empty($guid)) {
@@ -160,8 +183,6 @@
 				register_error(elgg_echo("best_practices:action:edit:error:save"));
 			}
 		}
-	} else {
-		register_error(elgg_echo("best_practices:action:edit:error:input"));
 	}
 	
 	forward($forward_url);

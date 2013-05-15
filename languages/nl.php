@@ -1,5 +1,11 @@
 <?php
 $language = array (
+  'best_practices:action:edit:error:required:title' => 'Geef een titel op om verder te kunnen gaan',
+  'best_practices:action:edit:error:required:description' => 'Geef een omschrijving op om verder te kunnen gaan',
+  'best_practices:action:edit:error:required:contact_name' => 'Geef een contactpersoon op om verder te kunnen gaan',
+  'best_practices:action:edit:error:required:contact_email' => 'Geef een contact e-mail adres op om verder te kunnen gaan',
+  'best_practices:action:edit:error:required:contact_phone' => 'Geef een contact telefoonnummer op om verder te kunnen gaan',
+  'best_practices:action:edit:error:required:groups' => 'Relateer ten minste één groep om verder te kunnen gaan',
   'item:object:best_practice' => 'Goed voorbeeld',
   'best_practice:add' => 'Nieuw goed voorbeeld',
   'best_practices:menu:site' => 'Goede voorbeelden',
@@ -16,10 +22,12 @@ $language = array (
   'best_practices:edit:groups' => 'Gerelateerde groepen',
   'best_practices:edit:contact' => 'Contact informatie',
   'best_practices:edit:contact:name' => 'Contactpersoon',
+  'best_practices:edit:contact:email' => 'E-mail adres',
   'best_practices:edit:attachements:url' => 'Links',
   'best_practices:edit:attachements:files' => 'Bestanden',
   'best_practices:edit:attachements:file:title' => 'Bestandsnaam',
   'best_practices:edit:attachements:file' => 'Upload een nieuw bestand',
+  'best_practices:edit:required' => 'Velden met een * zijn verplicht',
   'best_practices:friends:title' => '%s\' vrienden goede voorbeelden',
   'best_practices:group:title' => '%s\' goede voorbeelden',
   'best_practices:owner:title:mine' => 'Mijn goede voorbeelden',
@@ -39,9 +47,8 @@ $language = array (
   'best_practices:sidebar:links:title' => 'Links',
   'best_practices:action:delete_attachment:error' => 'Er is een onbekende fout opgetreden tijdens het verwijderen van de bijlage %s, probeer het nogmaals',
   'best_practices:action:delete_attachment:success' => 'De bijlage %s is verwijderd',
-  'best_practices:action:edit:error:input' => 'Je moet een titel en omschrijving opgeven om verder te kunnen gaan',
   'best_practices:action:edit:error:save' => 'Er is een onbekende fout opgetreden tijdens het opslaan van het goede voorbeeld',
   'best_practices:action:edit:success' => 'Het goede voorbeeld is opgeslagen',
-  'river:create:object:default' => '%s schreef het goede voorbeeld %s'',
+  'river:create:object:default' => '%s schreef het goede voorbeeld %s',
 );
 add_translation("nl", $language);

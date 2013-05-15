@@ -24,10 +24,12 @@
 		'best_practices:edit:groups' => "Related groups",
 		'best_practices:edit:contact' => "Contact information",
 		'best_practices:edit:contact:name' => "Contact person",
+		'best_practices:edit:contact:email' => "E-mail address",
 		'best_practices:edit:attachements:url' => "Links",
 		'best_practices:edit:attachements:files' => "Files",
 		'best_practices:edit:attachements:file:title' => "Filename",
 		'best_practices:edit:attachements:file' => "Upload a new file",
+		'best_practices:edit:required' => "Fields marked with a * are required",
 		
 		'best_practices:friends:title' => "%s friends' best practices",
 		
@@ -67,7 +69,12 @@
 		'best_practices:action:delete_attachment:success' => "The attachment %s was deleted",
 		
 		// edit
-		'best_practices:action:edit:error:input' => "Please provide a title and description in order to continue",
+		'best_practices:action:edit:error:required:title' => "Please provide a title in order to continue",
+		'best_practices:action:edit:error:required:description' => "Please provide a description in order to continue",
+		'best_practices:action:edit:error:required:contact_name' => "Please provide a contact person in order to continue",
+		'best_practices:action:edit:error:required:contact_email' => "Please provide a contact email in order to continue",
+		'best_practices:action:edit:error:required:contact_phone' => "Please provide a contact phonenumber in order to continue",
+		'best_practices:action:edit:error:required:groups' => "Please relate at least one group in order to continue",
 		'best_practices:action:edit:error:save' => "An unknown error occured while saving the best practice",
 		'best_practices:action:edit:success' => "The best practice was saved successfully",
 		
