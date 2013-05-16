@@ -22,6 +22,7 @@
 		'best_practices:edit:target_audience' => "Target audience",
 		'best_practices:edit:organisation' => "Organisation",
 		'best_practices:edit:groups' => "Related groups",
+		'best_practices:edit:groups:description' => "Type the name of at least one group and select it from the list",
 		'best_practices:edit:contact' => "Contact information",
 		'best_practices:edit:contact:name' => "Contact person",
 		'best_practices:edit:contact:email' => "E-mail address",

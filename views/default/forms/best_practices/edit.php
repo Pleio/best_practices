@@ -93,6 +93,7 @@
 		echo "<div>";
 		echo "<label for='best-practice-form-edit-groups'>" . elgg_echo("best_practices:edit:groups") . "*</label>";
 		echo elgg_view("input/text", array("id" => "best-practice-form-edit-groups"));
+		echo "<div class='elgg-subtext'>" . elgg_echo("best_practices:edit:groups:description") . "</div>";
 		echo "<div id='best-practice-form-edit-groups-result' class='ptm'>";
 		
 		if (!empty($groups)) {

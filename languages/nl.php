@@ -30,6 +30,7 @@ $language = array (
   'best_practices:edit:target_audience' => 'Doelgroep',
   'best_practices:edit:organisation' => 'Organisatie',
   'best_practices:edit:groups' => 'Gerelateerde groepen',
+  'best_practices:edit:groups:description' => "Type de naam van tenminste één groep en selecteer deze uit de lijst",
   'best_practices:edit:contact' => 'Contact informatie',
   'best_practices:edit:contact:name' => 'Contactpersoon',
   'best_practices:edit:contact:email' => 'E-mail adres',
