@@ -38,6 +38,7 @@ $language = array (
   'best_practices:edit:attachements:file:title' => 'Bestandsnaam',
   'best_practices:edit:attachements:file' => 'Upload een nieuw bestand',
   'best_practices:edit:required' => 'Velden met een * zijn verplicht',
+  'best_practices:listing:author' => "Geplaatst door",
   'best_practices:listing:created' => 'Aangemaakt',
   'best_practices:listing:likes' => 'Likes',
   'best_practices:listing:date_format' => 'Y-m-d',

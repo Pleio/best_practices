@@ -12,7 +12,7 @@
 	echo "<div>" . elgg_view("input/text", array("name" => "target_audience", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
-	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("admin:plugins:label:author");
+	echo "<th>" . elgg_view_icon("best-practices-filter", "float-alt") . elgg_echo("best_practices:listing:author");
 	echo "<div>" . elgg_view("input/text", array("name" => "author", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
