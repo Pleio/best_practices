@@ -39,10 +39,11 @@
 		'best_practices:owner:title:mine' => "My best practices",
 		'best_practices:owner:title' => "%s' best practices",
 		
-		'best_practices:listing:author' => "Created by",
+		'best_practices:listing:author' => "Author",
 		'best_practices:listing:created' => "Created",
 		'best_practices:listing:likes' => "Likes",
 		'best_practices:listing:date_format' => "Y-m-d",
+		'best_practices:listing:sortable' => "Click on the column to sort",
 		
 		// widget
 		'best_practices:widget:title' => "Best practices",

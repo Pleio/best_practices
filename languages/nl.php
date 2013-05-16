@@ -1,5 +1,6 @@
 <?php
 $language = array (
+  'best_practices:listing:sortable' => 'Klik op de kolom om te sorteren',
   'item:object:best_practice' => 'Praktijkvoorbeeld',
   'best_practice:add' => 'Nieuw praktijkvoorbeeld',
   'best_practices:menu:site' => 'Praktijkvoorbeelden',
@@ -30,7 +31,7 @@ $language = array (
   'best_practices:edit:target_audience' => 'Doelgroep',
   'best_practices:edit:organisation' => 'Organisatie',
   'best_practices:edit:groups' => 'Gerelateerde groepen',
-  'best_practices:edit:groups:description' => "Type de naam van tenminste één groep en selecteer deze uit de lijst",
+  'best_practices:edit:groups:description' => 'Type de naam van tenminste één groep en selecteer deze uit de lijst',
   'best_practices:edit:contact' => 'Contact informatie',
   'best_practices:edit:contact:name' => 'Contactpersoon',
   'best_practices:edit:contact:email' => 'E-mail adres',
@@ -39,7 +40,7 @@ $language = array (
   'best_practices:edit:attachements:file:title' => 'Bestandsnaam',
   'best_practices:edit:attachements:file' => 'Upload een nieuw bestand',
   'best_practices:edit:required' => 'Velden met een * zijn verplicht',
-  'best_practices:listing:author' => "Geplaatst door",
+  'best_practices:listing:author' => 'Geplaatst door',
   'best_practices:listing:created' => 'Aangemaakt',
   'best_practices:listing:likes' => 'Likes',
   'best_practices:listing:date_format' => 'Y-m-d',

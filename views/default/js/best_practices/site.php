@@ -71,14 +71,22 @@ elgg.best_practices.init = function() {
 		});
 	}
 
-	$(".elgg-icon-best-practices-filter").click(function(){
+	$(".elgg-icon-best-practices-filter").click(function(event){
 		$(this).parent().find(".best-practices-filter-input").toggle();
+		event.stopPropagation();
 	});
 
+	$(".best-practices-filter-input").click(function(event){
+		event.stopPropagation();
+	});
+	
 	$(".best-practices-filter-input").keyup(function() {
 		elgg.best_practices.filter(this);
 	});
-		
+
+	$("table.best-practices-table").each(function(index,elem){
+		$(elem).stupidtable();
+	});
 }
 
 elgg.best_practices.filter = function(elem) {

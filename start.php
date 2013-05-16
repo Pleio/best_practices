@@ -11,6 +11,9 @@
 		elgg_extend_view("css/elgg", "css/best_practices/site");
 		elgg_extend_view("js/elgg", "js/best_practices/site");
 		
+		// register js
+		elgg_register_js("stupidtable", "mod/best_practices/vendors/stupidtable/stupidtable.js");
+		
 		// register page handler for nice URL's
 		elgg_register_page_handler("best_practice", "best_practices_page_handler");
 		

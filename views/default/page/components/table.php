@@ -53,8 +53,12 @@ if (is_array($items) && count($items) > 0) {
 	$html .= "<table class=\"$list_class\">";
 	
 	if($header) {
+		$html .= "<thead>";
 		$html .= "<tr>" . $header . "</tr>";
+		$html .= "</thead>";
 	}
+	
+	$html .= "<tbody>";
 	
 	foreach ($items as $item) {
 		$tr = elgg_view_list_item($item, $vars);
@@ -67,6 +71,8 @@ if (is_array($items) && count($items) > 0) {
 			$html .= "<tr id=\"$id\" class=\"$item_class\">$tr</tr>";
 		}
 	}
+	
+	$html .= "</tbody>";
 	$html .= '</table>';
 }
 

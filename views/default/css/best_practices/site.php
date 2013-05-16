@@ -28,8 +28,30 @@
 	font-size: 12.8px;
 }
 
+.best-practices-align-right {
+	text-align: right;
+}
+
 .best-practices-filter-input {
 	display: none;
 	padding: 0px;
 	font-size: 100%;
+}
+
+.best-practices-sortable {
+	cursor: pointer;
+}
+
+.best-practices-sortable.sorting-asc,
+.best-practices-sortable.sorting-desc,
+.best-practices-sortable:hover {
+	text-decoration: underline;
+}
+
+.best-practices-sortable.sorting-desc .elgg-icon-speech-bubble {
+	background-position: 0 -1116px;
+}
+
+.best-practices-sortable.sorting-desc .elgg-icon-thumbs-up {
+	background-position: 0 -1350px;
 }
