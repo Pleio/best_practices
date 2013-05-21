@@ -55,7 +55,7 @@
 		'best_practices:settings:target_audience' => "Define the target audience options",
 		'best_practices:settings:target_audience:description' => "You can supply a comma seperated list of options for the target audience to be chosen when creating/editing a Best practice",
 		'best_practices:settings:use_predefined_groups' => "Limit the related groups to a predefined list",
-		'best_practices:settings:groups' => "Select the predefined related group",
+		'best_practices:settings:groups' => "Manage the list of predefined related groups",
 		'best_practices:settings:groups:description' => "Enter the name of a group and select it from the list to add it to the predefined related groups",
 		
 		// procedures
