@@ -23,6 +23,7 @@
 				
 				// sidebar
 				$sidebar = elgg_view("best_practices/sidebar/contact", array("entity" => $entity));
+				$sidebar .= elgg_view("best_practices/sidebar/target_audience", array("entity" => $entity));
 				$sidebar .= elgg_view("best_practices/sidebar/links", array("entity" => $entity));
 				$sidebar .= elgg_view("best_practices/sidebar/files", array("entity" => $entity));
 				$sidebar .= elgg_view("best_practices/sidebar/groups", array("entity" => $entity));

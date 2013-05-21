@@ -41,26 +41,13 @@
 		// make subtitle
 		$subtitle = $author . " " . $date . " " . $comments . " " . $categories;
 		
-		// list target audience
-		$target_audience = "";
-		if($entity->target_audience) {
-			$target = $entity->target_audience;
-			if (!is_array($target)) {
-				$target = array($target);
-			}
-			
-			$target_audience = "<div>";
-			$target_audience .= elgg_echo("best_practices:edit:target_audience") . ": " . elgg_view("output/text", array("value" => implode(", ", $target)));
-			$target_audience .= "</div>";
-		}
-		
 		// build summary
 		$params = array(
 			"entity" => $entity,
 			"metadata" => $entity_menu,
 			"title" => false,
 			"subtitle" => $subtitle,
-			"content" => $target_audience . $organisation
+			"content" => $organisation
 		);
 		
 		$params = $params + $vars;
