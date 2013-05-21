@@ -44,6 +44,8 @@
 		'best_practices:listing:likes' => "Likes",
 		'best_practices:listing:date_format' => "Y-m-d",
 		'best_practices:listing:sortable' => "Click on the column to sort",
+		'best_practices:listing:groups' => "Click on a group name to see all best practices related to this group",
+		'best_practices:listing:tags' => "Click on a tag to show more content with this tag",
 		
 		// widget
 		'best_practices:widget:title' => "Best practices",
