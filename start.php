@@ -10,6 +10,7 @@
 		// extend CSS/js
 		elgg_extend_view("css/elgg", "css/best_practices/site");
 		elgg_extend_view("js/elgg", "js/best_practices/site");
+		elgg_extend_view("js/admin", "js/best_practices/admin");
 		
 		// register js
 		elgg_register_js("stupidtable", "mod/best_practices/vendors/stupidtable/stupidtable.js");
@@ -36,6 +37,7 @@
 		elgg_register_plugin_hook_handler("public_pages", "walled_garden", "best_practices_public_pages_hook");
 		elgg_register_plugin_hook_handler("register", "menu:owner_block", "best_practices_register_menu_owner_block_hook");
 		elgg_register_plugin_hook_handler("widget_url", "widget_manager", "best_practices_widget_url_hook");
+		elgg_register_plugin_hook_handler("setting", "plugin", "best_practices_setting_hook");
 		
 		// register actions
 		elgg_register_action("best_practices/edit", dirname(__FILE__) . "/actions/edit.php");

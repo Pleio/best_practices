@@ -51,3 +51,20 @@
 		
 		return $result;
 	}
+	
+	function best_practices_setting_hook($hook, $type, $returnvalue, $params) {
+		$result = $returnvalue;
+		
+		if (!empty($params) && is_array($params)) {
+			$plugin = elgg_extract("plugin", $params);
+			$name = elgg_extract("name", $params);
+			$value = elgg_extract("value", $params);
+			
+			if (($plugin->getID() == "best_practices") && ($name == "group_guids") && !empty($value)) {
+				$result = implode(",", $value);
+			}
+		}
+		
+		return $result;
+	}
+	

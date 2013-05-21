@@ -36,9 +36,14 @@
 		"groups"
 	);
 	foreach ($required_input as $field) {
-		if (($field == "groups") && !elgg_is_active_plugin("groups")) {
-			// skip group requirement if groups isn't enabled
-			continue;
+		if ($field == "groups") {
+			if (!elgg_is_active_plugin("groups")) {
+				// skip group requirement if groups isn't enabled
+				continue;
+			} elseif (best_practices_use_predefined_groups() && !best_practices_get_predefined_group_guids()) {
+				// use predefined group, but none defined
+				continue;
+			}
 		}
 		
 		if (!get_input($field)) {

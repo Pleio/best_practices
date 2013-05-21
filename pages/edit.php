@@ -51,7 +51,9 @@
 	);
 	$body_vars = array(
 		"entity" => $entity,
-		"target_audience_options" => $target_audience_options
+		"target_audience_options" => $target_audience_options,
+		"use_predefined_groups" => best_practices_use_predefined_groups(),
+		"group_guids" => best_practices_get_predefined_group_guids()
 	);
 	
 	$form = elgg_view_form("best_practices/edit", $form_vars, $body_vars);

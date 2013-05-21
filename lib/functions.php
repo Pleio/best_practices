@@ -55,3 +55,33 @@
 				break;
 		}
 	}
+	
+	function best_practices_use_predefined_groups() {
+		static $result;
+		
+		if (!isset($result)) {
+			$result = false;
+			
+			if (elgg_get_plugin_setting("use_predefined_groups", "best_practices") == "yes") {
+				$result = true;
+			}
+		}
+		
+		return $result;
+	}
+	
+	function best_practices_get_predefined_group_guids() {
+		static $result;
+		
+		if (!isset($result)) {
+			$result = false;
+			
+			if ($group_guids = elgg_get_plugin_setting("group_guids", "best_practices")) {
+				$group_guids = explode(",", $group_guids);
+				
+				$result = array_filter($group_guids, create_function('$a', 'return !empty($a);'));
+			}
+		}
+		
+		return $result;
+	}

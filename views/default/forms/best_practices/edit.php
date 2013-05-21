@@ -2,6 +2,9 @@
 
 	$entity = elgg_extract("entity", $vars);
 	$target_audience_options = elgg_extract("target_audience_options", $vars, false);
+	$use_predefined_groups = (bool) elgg_extract("use_predefined_groups", $vars, false);
+	$group_guids = elgg_extract("group_guids", $vars);
+	
 	$has_icon = false;
 	
 	if (!empty($entity)) {
@@ -88,29 +91,52 @@
 	echo elgg_view("input/categories", $vars);
 	
 	if (elgg_is_active_plugin("groups")) {
-		elgg_load_js("jquery.ui.autocomplete.html");
-		
-		echo "<div>";
-		echo "<label for='best-practice-form-edit-groups'>" . elgg_echo("best_practices:edit:groups") . "*</label>";
-		echo elgg_view("input/text", array("id" => "best-practice-form-edit-groups"));
-		echo "<div class='elgg-subtext'>" . elgg_echo("best_practices:edit:groups:description") . "</div>";
-		echo "<div id='best-practice-form-edit-groups-result' class='ptm'>";
-		
-		if (!empty($groups)) {
-			$group_list_options = array(
-				"guids" => $groups,
-				"limit" => false
-			);
-			if ($group_entities = elgg_get_entities($group_list_options)) {
-				foreach ($group_entities as $group) {
-					echo elgg_view("input/hidden", array("name" => "groups[]", "value" => $group->getGUID()));
-					echo elgg_view_entity($group, array("full_view" => false));
+		if ($use_predefined_groups) {
+			if ($group_guids) {
+				$options = array(
+					"guids" => $group_guids,
+					"limit" => false
+				);
+				
+				if ($predefined_groups = elgg_get_entities($options)) {
+					$group_options = array();
+					
+					foreach($predefined_groups as $pre_group) {
+						$group_options[$pre_group->name] = $pre_group->getGUID();
+					}
+					
+					echo "<div>";
+					echo "<label for='best-practice-form-edit-groups-checkbox'>" . elgg_echo("best_practices:edit:groups") . "*</label>";
+					echo elgg_view("input/checkboxes", array("name" => "groups", "value" => $groups, "id" => "best-practice-form-edit-groups-checkbox", "options" => $group_options, "align" => "horizontal"));
+					echo "</div>";
 				}
 			}
+		} else {
+			// use autocomplete group selection
+			elgg_load_js("jquery.ui.autocomplete.html");
+			
+			echo "<div>";
+			echo "<label for='best-practice-form-edit-groups'>" . elgg_echo("best_practices:edit:groups") . "*</label>";
+			echo elgg_view("input/text", array("id" => "best-practice-form-edit-groups"));
+			echo "<div class='elgg-subtext'>" . elgg_echo("best_practices:edit:groups:description") . "</div>";
+			echo "<div id='best-practice-form-edit-groups-result' class='ptm'>";
+			
+			if (!empty($groups)) {
+				$group_list_options = array(
+					"guids" => $groups,
+					"limit" => false
+				);
+				if ($group_entities = elgg_get_entities($group_list_options)) {
+					foreach ($group_entities as $group) {
+						echo elgg_view("input/hidden", array("name" => "groups[]", "value" => $group->getGUID()));
+						echo elgg_view_entity($group, array("full_view" => false));
+					}
+				}
+			}
+			
+			echo "</div>";
+			echo "</div>";
 		}
-		
-		echo "</div>";
-		echo "</div>";
 	}
 	
 	// contact information
