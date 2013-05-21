@@ -9,7 +9,7 @@
 			$content = elgg_view_icon("user", "mrs") . $entity->contact_name . "<br />";
 		}
 		
-		if ($entity->contact_name) {
+		if ($entity->organisation) {
 			$content .= elgg_view_icon("users", "mrs") . $entity->organisation . "<br />";
 		}
 		
