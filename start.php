@@ -24,12 +24,6 @@
 		// register best practice for search
 		elgg_register_entity_type("object", BestPractice::SUBTYPE);
 		
-		// extend views
-		elgg_extend_view("groups/tool_latest", "best_practices/group_module");
-		
-		// register widgets
-		elgg_register_widget_type("best_practices", elgg_echo("best_practices:widget:title"), elgg_echo("best_practices:widget:description"), "groups");
-		
 		// register events
 		elgg_register_event_handler("pagesetup", "system", "best_practices_pagesetup");
 		
@@ -52,4 +46,15 @@
 			"text" => elgg_echo("best_practices:menu:site"),
 			"href" => "best_practice/all"
 		));
+		
+		// group module/widget depends on admin settings
+		if (($page_owner = elgg_get_page_owner_entity()) && elgg_instanceof($page_owner, "group")) {
+			if (!best_practices_use_predefined_groups() || (($group_guids = best_practices_get_predefined_group_guids()) && in_array($page_owner->getGUID(), $group_guids))) {
+				// extend views
+				elgg_extend_view("groups/tool_latest", "best_practices/group_module");
+				
+				// register widgets
+				elgg_register_widget_type("best_practices", elgg_echo("best_practices:widget:title"), elgg_echo("best_practices:widget:description"), "groups");
+			}
+		}
 	}

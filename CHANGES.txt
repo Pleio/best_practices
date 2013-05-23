@@ -1,5 +1,9 @@
 = Version History =
 
+x.x:
+
+- fixed: group menu item and module/widget are now dependant on the plugin settings
+
 1.0 (2013-05-22):
 
 - initial release
