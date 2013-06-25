@@ -48,3 +48,9 @@
 		echo "</div>"; // end groups result
 		echo "</div>"; // end groups
 	}
+	
+	// additional text on the listing pages
+	echo "<div>";
+	echo "<label for='best-practices-settings-additional-text'>" . elgg_echo("best_practices:settings:additional_text") . "</label>";
+	echo elgg_view("input/longtext", array("name" => "params[additional_text]", "value" => $plugin->additional_text, "id" => "best-practices-settings-additional-text"));
+	echo "</div>";

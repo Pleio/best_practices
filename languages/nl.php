@@ -5,6 +5,7 @@ $language = array (
   'best_practices:settings:use_predefined_groups' => 'Maak gebruik van een gelimiteerde lijst voor gerelateerde groepen',
   'best_practices:settings:groups' => 'Beheer de lijst met voorgedefinieerde groepen',
   'best_practices:settings:groups:description' => 'Geef de naam van een groep op en selecteer deze uit de lijst om de groep toe te voegen aan de lijst met voorgedefinieerde groepen',
+  'best_practices:settings:additional_text' => 'Extra tekst voor op de lijst weergave pagina\'s',
   'best_practices:listing:sortable' => 'Klik op de kolom om te sorteren',
   'item:object:best_practice' => 'Praktijkvoorbeeld',
   'best_practice:add' => 'Nieuw praktijkvoorbeeld',

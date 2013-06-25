@@ -2,6 +2,7 @@
 
 x.x:
 
+- added: plugin setting for additional text on the listing pages
 - fixed: group menu item and module/widget are now dependant on the plugin settings
 - changed: correct usage of internal class function
 

@@ -22,6 +22,9 @@
 	// register title button
 	elgg_register_title_button();
 	
+	// we need to be able to add some text after header, but before filter
+	elgg_extend_view("page/layouts/content/header", "best_practices/list_description");
+	
 	// build page
 	$page_data = elgg_view_layout("best_practices", array(
 		"title" => $title_text,

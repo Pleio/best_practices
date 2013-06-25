@@ -57,6 +57,7 @@
 		'best_practices:settings:use_predefined_groups' => "Limit the related groups to a predefined list",
 		'best_practices:settings:groups' => "Manage the list of predefined related groups",
 		'best_practices:settings:groups:description' => "Enter the name of a group and select it from the list to add it to the predefined related groups",
+		'best_practices:settings:additional_text' => "Text to be displayed on the listing pages of Best practices",
 		
 		// procedures
 		'best_practices:attachtment:not_found' => "The attachtment could not be found",
