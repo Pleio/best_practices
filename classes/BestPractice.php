@@ -4,10 +4,10 @@
 		const SUBTYPE = "best_practice";
 		const GROUP_RELATIONSHIP = "related";
 		
-		public function initializeAttributes() {
+		protected function initializeAttributes() {
 			parent::initializeAttributes();
 			
-			$this->subtype = self::SUBTYPE;
+			$this->attributes["subtype"] = self::SUBTYPE;
 		}
 		
 		/**
