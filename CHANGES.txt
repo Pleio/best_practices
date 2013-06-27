@@ -1,6 +1,6 @@
 = Version History =
 
-x.x:
+1.1 (2013-06-27):
 
 - added: plugin setting for additional text on the listing pages
 - fixed: group menu item and module/widget are now dependant on the plugin settings
