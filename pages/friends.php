@@ -32,6 +32,7 @@
 			"subtype" => BestPractice::SUBTYPE,
 			"owner_guids" => $friend_guids,
 			"limit" => false,
+			"pagination" => false,
 			"full_view" => false,
 			"list_type" => "table",
 			"list_class" => "best-practices-table",

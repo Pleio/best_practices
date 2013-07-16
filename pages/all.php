@@ -11,6 +11,7 @@
 		"subtype" => BestPractice::SUBTYPE,
 		"limit" => false,
 		"full_view" => false,
+		"pagination" => false,
 		"list_type" => "table",
 		"list_class" => "best-practices-table",
 		"header" => elgg_view("best_practices/list_header")

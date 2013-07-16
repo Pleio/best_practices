@@ -1,5 +1,9 @@
 = Version History =
 
+x.x:
+
+- fixed: pagination shows in listing
+
 1.1 (2013-06-27):
 
 - added: plugin setting for additional text on the listing pages

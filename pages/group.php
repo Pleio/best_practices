@@ -23,6 +23,7 @@
 		"relationship_guid" => $page_owner->getGUID(),
 		"inverse_relationship" => true,
 		"limit" => false,
+		"pagination" => false,
 		"full_view" => false,
 		"list_type" => "table",
 		"list_class" => "best-practices-table",

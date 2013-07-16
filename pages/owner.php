@@ -29,6 +29,7 @@
 		"subtype" => BestPractice::SUBTYPE,
 		"owner_guid" => $page_owner->getGUID(),
 		"limit" => false,
+		"pagination" => false,
 		"full_view" => false,
 		"list_type" => "table",
 		"list_class" => "best-practices-table",
