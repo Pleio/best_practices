@@ -15,10 +15,19 @@
 	margin: 0 0 0 10px;
 }
 
+.best-practices-table {
+	table-layout:fixed;
+}
+
 .best-practices-table .best-practices-nowrap,
 .best-practices-table th {
 	white-space: nowrap;
 	word-wrap: normal;
+}
+
+.best-practices-table-comments,
+.best-practices-table-likes {
+	width: 30px;
 }
 
 .best-practices-table ul.elgg-tags .elgg-icon {

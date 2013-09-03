@@ -37,10 +37,10 @@
 	echo "<div>" . elgg_view("input/text", array("name" => "created", "class" => "best-practices-filter-input")) . "</div>";
 	echo "</th>";
 	
-	echo "<th class='best-practices-align-right best-practices-sortable' data-sort='int' class='best-practices-sortable' title='" . htmlspecialchars(elgg_echo("best_practices:listing:sortable"), ENT_QUOTES, "UTF-8", false) . "'>";
+	echo "<th class='best-practices-table-comments best-practices-align-right best-practices-sortable' data-sort='int' class='best-practices-sortable' title='" . htmlspecialchars(elgg_echo("best_practices:listing:sortable"), ENT_QUOTES, "UTF-8", false) . "'>";
 	echo elgg_view_icon("speech-bubble") . "</th>";
 	
 	if (elgg_is_active_plugin("likes")) {
-		echo "<th class='best-practices-align-right best-practices-sortable' data-sort='int' class='best-practices-sortable' title='" . htmlspecialchars(elgg_echo("best_practices:listing:sortable"), ENT_QUOTES, "UTF-8", false) . "'>";
+		echo "<th class='best-practices-table-likes best-practices-align-right best-practices-sortable' data-sort='int' class='best-practices-sortable' title='" . htmlspecialchars(elgg_echo("best_practices:listing:sortable"), ENT_QUOTES, "UTF-8", false) . "'>";
 		echo elgg_view_icon("thumbs-up") . "</th>";
 	}

@@ -97,14 +97,14 @@
 			echo "<td rel='created' class='best-practices-nowrap'>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
 			
 			$comments = elgg_view("output/url", array("text" => $comment_count . "&nbsp;" . elgg_view_icon("speech-bubble"), "href" => $entity->getURL() . "#comments", "is_trusted" => true));
-			echo "<td rel='comments' class='best-practices-nowrap best-practices-align-right'>" . $comments . "</td>";
+			echo "<td rel='comments' class='best-practices-table-comments best-practices-nowrap best-practices-align-right'>" . $comments . "</td>";
 			
 			// likes, if available
 			if (elgg_is_active_plugin("likes")) {
 				$likes_count = likes_count($entity);
 				$likes_link = elgg_view("likes/button", array("entity" => $entity));
 				
-				echo "<td rel='likes' class='best-practices-nowrap best-practices-align-right'>" . $likes_count . "&nbsp;" . $likes_link . "</td>";
+				echo "<td rel='likes' class='best-practices-table-likes best-practices-nowrap best-practices-align-right'>" . $likes_count . "&nbsp;" . $likes_link . "</td>";
 			}
 		} else {
 			// list view
